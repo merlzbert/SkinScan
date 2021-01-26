@@ -1,0 +1,19 @@
+# Required libraries for framework
+# Use pip3 install -r requirements.txt
+Pillow >= 7.0.0
+matplotlib >= 3.2.1
+numpy >= 1.18.2
+# Requirement for a Basler Camera
+# pypylon >= 1.5.4
+torch >= 1.4.0
+tifffile >= 2020.6.3
+scipy >= 1.5.2
+wavepy >= 1.0.5
+checkerboard >= 0.2.4
+tqdm >= 4.48.2
+opencv-contrib-python >= 4.4.0
+selenium>=3.141.0
+pandas>=1.1.1
+scikit-image>=0.17.2
+ipython>=7.18.1
+bokeh>=0.12.5
