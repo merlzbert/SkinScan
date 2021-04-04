@@ -329,7 +329,6 @@ class GradientShiftingReconstruction(ImageProcessing, ABC):
         p_g_cost = v*p_green_fft - u*q_green_fft
         p_cost = np.dstack((p_r_cost, p_g_cost))
         # Find gradient that minimizes constraint
-        print("Moin")
         ids = np.argmin(p_cost, axis=2)
         n_ids = np.where((ids == 0) | (ids == 1), ids ^ 1, ids)
         opt_fft_p = n_ids * p_red + ids * p_green
