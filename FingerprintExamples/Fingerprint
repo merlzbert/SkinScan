@@ -1,1 +1,1 @@
-Fingerprints
+In this folder we present the resulting normal map, 3D reconstruction and albedo image of a subject's fingerprint. The results have been acquired using the open-source available gradient-illumination technique. The plotted depth profile refers to the inpainted line on the normal and albedo images, which ranges from the side of the finger towards the top and contains the information about the lines inbetween.
