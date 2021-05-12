@@ -27,6 +27,8 @@ class PySpinCapture(ABC, Camera):
         index: the index of the camera to be used
         output
         """
+        super().__init__(None, None, None, None, (width, height), isMonochrome)
+        
         # [Current Support] Single camera usage(select by index)
         self._system = PySpin.System.GetInstance()
         # Get current library version
@@ -63,15 +65,14 @@ class PySpinCapture(ABC, Camera):
 
         # Filling in values for abstract class initialization
         # update if needed. 
-        exposure = self.getExposure()
-        fps = self.getFPS()
-        white_balance = 0 # random fill value for required field.
-        auto_focus = True # random fill value for required field. 
-
+        self.exposure = self.getExposure()
+        self.fps = self.getFPS()
+        self.white_balance = 0 # random fill value for required field.
+        self.auto_focus = True # random fill value for required field. 
         # self._camera.PixelFormat.GetValue() try this
-        resolution = self.getResolution()
-        grayscale = isMonochrome
-        super().__init__(exposure, white_balance, auto_focus, fps, resolution, grayscale)
+        self.resolution = self.getResolution()
+        self.grayscale = isMonochrome
+        
 
     def _init_nodes(self):
         """

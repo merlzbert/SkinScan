@@ -1,3 +1,4 @@
+# source https://git.compphotolab.northwestern.edu/fschiffers/structured_light_framework
 from abc import abstractmethod
 
 
@@ -26,12 +27,12 @@ class Camera:
         pass
 
     @abstractmethod
-    def getExposure(self):
+    def setExposure(self, exposure):
         # To override
         pass
 
     @abstractmethod
-    def setExposure(self, exposure):
+    def getExposure(self):
         # To override
         pass
 
