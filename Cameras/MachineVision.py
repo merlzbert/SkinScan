@@ -15,7 +15,6 @@ import PIL
 class Basler(Camera, ABC):
 
     def __init__(self, exposure=0.01, white_balance=0, auto_focus=False, grayscale=True):
-        #  TODO: pylon.FeaturePersistence.Save("test.txt", camera.GetNodeMap())
         # Setting and initializing the Basler camera
         self.cap = pylon.InstantCamera(pylon.TlFactory.GetInstance().CreateFirstDevice())
         self.cap.Open()
