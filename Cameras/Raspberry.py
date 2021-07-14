@@ -54,12 +54,8 @@ class RaspberryCam(Camera, ABC):
 
     def getImage(self, name='test', saveImage=True, saveNumpy=True, calibration=False):
         # Grab current frame
-        # TODO!!!!
         frame = np.empty((self.resolution[1], self.resolution[0], 3), dtype=np.uint8)
         self.cap.capture(frame, 'rgb')
-        # TODO: Save to jpg
-        # if saveImage:
-        #    self.cap.capture('CapturedImages/capture_%i.jpg' % count, 'jpeg')
         if saveNumpy:
             if calibration:
                 np.save('CalibrationNumpyData/' + name, frame)
