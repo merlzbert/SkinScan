@@ -11,8 +11,7 @@ class RadiometricCalibSession(CalibrationSession, ABC):
         self.g = None
         self.radio_calib = radio_calib
         if exposures == 0:
-            # Dark Inside:
-            # self.exposures = [500, 750, 1000, 1500, 2000, 4000, 6000, 8000, 10000, 12000, 14000, 16000, 18000, 20000, 22000]
+            # Sample exposures that have been used in low-light settings with the Basler ace 2 camera:
             self.exposures = [30, 60, 100, 200, 400, 600, 1000, 1500, 2000, 4000, 6000, 8000, 10000, 14000, 19000,
                               24000, 31000, 39000, 49000, 60000]
         else:
@@ -41,9 +40,4 @@ class RadiometricCalibSession(CalibrationSession, ABC):
         imgs, g = self.radio_calib.calibrate_image(exposure, path)
         return imgs, g
 
-
-# self.exposures = [19, 54, 100, 298, 497, 803, 1599, 3198, 6402, 12798, 16003, 18007, 24005, 39993, 79986,
-#                  159971, 300114]
-# self.exposures = [19, 38, 76, 152, 304, 608, 1216, 2432, 4864, 9728, 19456, 38912, 77824, 155648, 311296,
-#    622592, 1245184, 2490368, 4980736]
 
