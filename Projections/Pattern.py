@@ -11,7 +11,6 @@ class GradientPattern(Projection, ABC):
         # Set frequency depending on screen resolution
 
     def createGradientXY(self, n=2, red=1.0, green=1.0, blue=1.0):
-        #coeff = [-2.39958185, 7.09471598, -6.94586026, 3.19411896, 0.02044966]
         # Number gradient shifts n:
         # Set up pattern list to store phase shift images (X and Y direction)
         self.patterns = np.zeros((self.resolution[1], self.resolution[0], 3, n*2+1))
@@ -20,8 +19,6 @@ class GradientPattern(Projection, ABC):
         # Create gradient
         x = np.linspace(0, 1, self.resolution[0])
         y = np.linspace(0, 1, self.resolution[1])
-        #x = coeff[0] * x ** 4 + coeff[1] * x ** 3 + coeff[2] * x ** 2 + coeff[3] * x + coeff[4]
-        #y = coeff[0] * y ** 4 + coeff[1] * y ** 3 + coeff[2] * y ** 2 + coeff[3] * y + coeff[4]
         # Reverse gradient
         xR = np.flipud(x)
         yR = np.flipud(y)
@@ -92,8 +89,6 @@ class StepPattern(Projection, ABC):
         self.patterns = np.zeros((self.resolution[1], self.resolution[0], n+1))
         # Create calibrated values
         x = np.linspace(0, 1, 50)
-        #coeff1 = [-2.39958185,  7.09471598, -6.94586026,  3.19411896,  0.02044966]
-        #y = coeff1[0]*x**4 + coeff1[1]*x**3 + coeff1[2]*x**2 + coeff1[3]*x + coeff1[4]
         # Create constant patterns
         for i in range(n):
             self.patterns[:, :, i] = np.ones((self.resolution[1], self.resolution[0])) * x[i]
