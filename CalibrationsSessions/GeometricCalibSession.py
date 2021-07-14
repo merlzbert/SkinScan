@@ -22,6 +22,5 @@ class GeometricCalibSession(CalibrationSession, ABC):
         # The image is by default saved in CalibrationImages/Geometric
 
     def calibrate(self):
-        # TODO: Include all calls necessary for calibration
         self.geometric_calib.calibrate()
         return self.camera
