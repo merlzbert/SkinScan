@@ -3,7 +3,7 @@ from CaptureSession import CaptureSession
 from Projections import Pattern
 
 
-class GradientShiftingCapture(CaptureSession, ABC):
+class GradientIlluminationCapture(CaptureSession, ABC):
     def __init__(self, camera, projection, image_processing, calibration=None, n=4):
         self.camera = camera
         self.projection = projection
